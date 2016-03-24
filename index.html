@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Hello World!</title>
+  </head>
+  <body>
+    <button class="js-omg" type="button">OMG</button>
+
+    <script type="text/javascript">
+      var ipc = require('electron').ipcRenderer
+      document.querySelector('.js-omg').addEventListener(
+        'click', function () {
+        ipc.send('got-called');
+      })
+    </script>
+  </body>
+</html>
